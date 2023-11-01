@@ -1,5 +1,6 @@
 # 백만 장자 프로젝트 
 # 리스트를 거꾸로 체크하는 방식 
+# algorithm type : greedy 
 
 #input 
 t = int(input()) # testcase 
@@ -15,6 +16,7 @@ for i in range (1,t+1):
             v +=max_price - j  # 그렇지않으면 최대값 - 현재값 
             
     print("#"+str(i),str(v)) 
+    # print("#{} {}" .format(i,v)) # format 함수 사용 출력 
 
 
         
