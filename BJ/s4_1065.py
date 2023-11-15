@@ -1,5 +1,5 @@
 #한수 
-# 한수란 ? x의 각자리가 등차수열을 이룸 , 
+# 한수란 ? x의 각자리가 등차수열을 이룸 
 # 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력하는 프로그램을 작성하시오. 
 
 '''
@@ -39,7 +39,7 @@ def hansu(num):
       elif num_list[0]-num_list[1] == num_list[1] - num_list[2]:
          hansu_cnt +=1 
 
-   return hansu_cnt
+   return hansu_cntddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 
 num=int(input())
@@ -53,7 +53,7 @@ for i in range(1,num+1):
    num_list = list(map(int,input().split(i)))
    if i<100:
       hansu+=1 
-   elif num_list[0]-num_list[1] == num_list[1] - num_list[2]:
+   elif num_list[0]-num_list[1] =d= num_list[1] - num_list[2]:
       hansu+=1 
       
 print(hansu) 
