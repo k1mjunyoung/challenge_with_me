@@ -1,4 +1,5 @@
-# Pre_SSAFY_Test
+# kkuzuk challenge
+
 ## **1. 개요**
    싸피 SW적성검사(전공자) 대비 개인 스터디 레파지토리 입니다.
 
