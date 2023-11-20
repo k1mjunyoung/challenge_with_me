@@ -39,7 +39,7 @@ def hansu(num):
       elif num_list[0]-num_list[1] == num_list[1] - num_list[2]:
          hansu_cnt +=1 
 
-   return hansu_cntddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+   return hansu_cnt
 
 
 num=int(input())
