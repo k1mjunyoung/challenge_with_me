@@ -1,4 +1,5 @@
-# Pre_SSAFY_Test
+# kkuzuk challenge
+
 ## **1. 개요**
    싸피 SW적성검사(전공자) 대비 개인 스터디 레파지토리 입니다.
 
@@ -8,3 +9,19 @@
 ## **3. 스터디 계획**
   3.1 백준 (bj)
   </br>3.2 SWEA (d1~d3)
+
+## 문제 기여 방식
+
+- 아래 네이밍 규칙에 맞게 패키지를 생성하고, 본인 이름의 파일에 작성해주세요.
+
+```bash
+백준 -> boj
+프로그래머스 -> prg
+SWEA -> swea
+
+# SWEA bfs 문제(1954)일 경우
+/bfs/swea1954/nayoung.py
+
+# 백준 정렬 문제(2751)일 경우
+/sort/boj2751/k1mjunyoung.java
+```
