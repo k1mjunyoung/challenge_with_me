@@ -1,5 +1,5 @@
 #유기농 배추 
-
+'''
 #input 
 T = int(input())
 # T=1
@@ -30,5 +30,53 @@ for i in range(T):
              dr = (dr+1)%4 # 방향 순환
 
     print(tmp)
+'''
+#bfs를 이용해서 푼 문제 
+
+from collections import deque
+T = int(input())
+dx=[-1,1,0,0] # 상하 
+dy=[0,0,-1,1] # 좌우
+
+def bfs(x,y):
+    queue=deque() 
+    queue.append((x,y))
+
+    while queue:
+        x,y=queue.popleft()
+        for i in range(4): 
+            nx=x+dx[i]
+            ny=y+dy[i] 
+
+            if nx<0 or ny<0 or nx>=N or ny>=M: #범위 
+                continue
+            if bat[nx][ny]==1:  #배추가 있으면 
+                queue.append((nx,ny))
+                bat[nx][ny]=0  #1->0으로 바꿈 
+    return
+
+
+for i in range(T): 
+    M,N,K = list(map(int,input().split()))
+    bat = [[0]*M for _ in range(N)]  
+
+    #input array 
+    for _ in range(K): 
+        i,j=map(int,input().split())
+        bat[j][i]=1  
+
+    cnt=0 
+    for i in range(N):
+        for j in range(M): 
+            if bat[i][j]==1:  #배추가 있으면 
+                bfs(i,j)        #bfs시작 
+                cnt+=1    #배추흰지렁이 count 
+    print(cnt)
+
+
+    
+
+
+
 
     
