@@ -1,4 +1,4 @@
-package greedy.boj2839;
+package greedy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * https://www.acmicpc.net/problem/2839
  */
-public class k1mjunyoung {
+public class boj2839_k1mjunyoung {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder stringBuilder = new StringBuilder();

@@ -1,14 +1,13 @@
-# kkuzuk challenge
+# 끄적 챌린지
 
 ## **1. 개요**
-   싸피 SW적성검사(전공자) 대비 개인 스터디 레파지토리 입니다.
+   
 
 ## **2. 스터디 진행 기간**
-   10-30 ~ 11-18 (약 3주 소요예상)
+   
 
 ## **3. 스터디 계획**
-  3.1 백준 (bj)
-  </br>3.2 SWEA (d1~d3)
+  
 
 ## 문제 기여 방식
 
@@ -19,9 +18,9 @@
 프로그래머스 -> prg
 SWEA -> swea
 
-# SWEA bfs 문제(1954)일 경우
-/bfs/swea1954/nayoung.py
+# SWEA bfs 1954번 문제일 경우
+/bfs/swea1954_nayoung.py
 
-# 백준 정렬 문제(2751)일 경우
-/sort/boj2751/k1mjunyoung.java
+# 백준 정렬 2751번 문제일 경우
+/sort/boj2751_k1mjunyoung.java
 ```
