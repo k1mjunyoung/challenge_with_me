@@ -3,6 +3,9 @@ package array;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/1844
+ */
 public class prg1844_k1mjunyoung {
     // 1. 상태 정의
     private static class State {
