@@ -1,4 +1,4 @@
-package sort.boj2751;
+package sort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import java.util.List;
  *
  *  2. println 사용하면 시간초과 -> StringBuilder 사용
  */
-public class k1mjunyoung {
+public class boj2751_k1mjunyoung {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();

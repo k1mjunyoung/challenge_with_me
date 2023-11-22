@@ -1,4 +1,4 @@
-package array.prg1844;
+package array;
 
 import java.util.LinkedList;
 import java.util.Queue;
