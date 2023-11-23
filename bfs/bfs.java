@@ -1,3 +1,4 @@
+/*
 package array;
 
 import java.util.LinkedList;
@@ -8,20 +9,30 @@ public class bfs {
 
     Queue<Integer> queue = new LinkedList<>();
 
-    queue.add(/* initialState */ 0);
-    isVisited[/* initialState */ 0] = true;
+    queue.add(*/
+/* initialState *//*
+ 0);
+    isVisited[*/
+/* initialState *//*
+ 0] = true;
 
     while (!queue.isEmpty()) {
         int state = queue.poll();
 
-        /* 현재 상태 state 처리 */
+        */
+/* 현재 상태 state 처리 *//*
+
 
         for (int next : getNextStates(state)) {
-            if (!/* 번위 검사 조건 */) {
+            if (!*/
+/* 번위 검사 조건 *//*
+) {
                 continue;
             }
 
-            if (!/* 유효성 검사 */) {
+            if (!*/
+/* 유효성 검사 *//*
+) {
                 continue;
             }
 
@@ -36,3 +47,4 @@ public class bfs {
         }
     }
 }
+*/
