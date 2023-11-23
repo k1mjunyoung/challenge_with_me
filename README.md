@@ -12,17 +12,17 @@
     <tr>
       <td align="center">
         <a href="https://github.com/nayoung03">
-          <img src="https://avatars.githubusercontent.com/u/89790280?v=4" alt="박나영"
+          <img src="https://avatars.githubusercontent.com/u/89790280?v=4" alt="nayoung03"
           width="64" />
           <br />
-          박나영
+          nayoung03
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/k1mjunyoung">
-          <img src="https://avatars.githubusercontent.com/u/74641191?v=4" alt="김준영" width="64" />
+          <img src="https://avatars.githubusercontent.com/u/74641191?v=4" alt="k1mjunyoung" width="64" />
           <br />
-          김준영
+          k1mjunyoung
         </a>
       </td>
     </tr>
