@@ -8,26 +8,22 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
+ * https://www.acmicpc.net/problem/7576
  * 1트 실패: 예외처리 안함
  * 2트 실패: 시간 초과 -> 단순 순회할 때도 bfs를 사용해보자
- *
+ * 3트 실패: Pos 객체에 step 클래스 변수 추가해서 로직 단순화 했지만 메모리 초과
+ * 4트 성공: 방문 처리 for문 안에서
  */
 public class boj7576_k1mjunyoung {
-    static int N, M;
-    static int[][] box;
-    static boolean[][] isVisited;
-    static boolean[][] isGrowCurrently;
-
-    static int[] dy = {-1, 0, 1, 0};
-    static int[] dx = { 0, 1, 0,-1};
-
     static class Pos {
         int y;
         int x;
+        int step;
 
-        Pos(int y, int x) {
+        Pos(int y, int x, int step) {
             this.y = y;
             this.x = x;
+            this.step = step;
         }
     }
 
@@ -35,121 +31,70 @@ public class boj7576_k1mjunyoung {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        // M = scanner.nextInt();
-        // N = scanner.nextInt();
         st = new StringTokenizer(br.readLine());
-        M = Integer.parseInt(st.nextToken());
-        N = Integer.parseInt(st.nextToken());
-        box = new int[N][M];
-        isVisited = new boolean[N][M];
-        isGrowCurrently = new boolean[N][M];
+        // 가로
+        int M = Integer.parseInt(st.nextToken());
+        // 세로
+        int N = Integer.parseInt(st.nextToken());
+        int[][] box = new int[N][M];
+        boolean[][] isVisited = new boolean[N][M];
+
+        int[] dy = {-1, 0, 1, 0};
+        int[] dx = { 0, 1, 0,-1};
+
+        Queue<Pos> queue = new LinkedList<>();
+
+        int tomato;
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < M; j++) {
-                // ox[i][j] = scanner.nextInt();
-                box[i][j] = Integer.parseInt(st.nextToken());
+                tomato = Integer.parseInt(st.nextToken());
+                box[i][j] = tomato;
+                if (tomato == 1) {
+                    queue.add(new Pos(i, j, 0));
+                }
             }
         }
 
         int count = 0;
 
-        boolean isAllGrown = !isExistZeroTomato();
+        while (!queue.isEmpty()) {
+            Pos pos = queue.poll();
 
-        Root:
-        while (!isAllGrown) {
-            // 돌면서 익히기
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
-                    if (box[i][j] == 1 && !isVisited[i][j] && !isGrowCurrently[i][j]) {
-                        growUp(i, j);
-                    }
-                }
+            if (box[pos.y][pos.x] == 0) {
+                box[pos.y][pos.x] = 1;
+                count = pos.step;
             }
 
-            count++;
-            isGrowCurrently = new boolean[N][M];
+            for (int d = 0; d < 4; d++) {
+                int ny = pos.y + dy[d];
+                int nx = pos.x + dx[d];
 
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
-                    if (box[i][j] == 0) {
-                        if (canGrow(i, j)) {
-                            continue Root;
-                        } else {
-                            count = -1;
-                        }
-                    }
+                if (ny < 0 || ny >= N || nx < 0 || nx >= M) {
+                    continue;
                 }
-            }
+                if (box[ny][nx] == -1) {
+                    continue;
+                }
+                if (isVisited[ny][nx]) {
+                    continue;
+                }
 
-            isAllGrown = true;
+                queue.add(new Pos(ny, nx, pos.step + 1));
+                isVisited[ny][nx] = true;
+            }
         }
 
-        System.out.println(count);
-    }
-
-    static void growUp(int y, int x) {
-        Pos pos = new Pos(y, x);
-
-        for (int d = 0; d < 4; d++) {
-            int ny = pos.y + dy[d];
-            int nx = pos.x + dx[d];
-
-            if (ny < 0 || ny >= N || nx < 0 || nx >= M) {
-                continue;
-            }
-            if (box[ny][nx] == -1 || box[ny][nx] == 1) {
-                continue;
-            }
-            if (isVisited[ny][nx]) {
-                continue;
-            }
-
-            box[ny][nx] = 1;
-            isGrowCurrently[ny][nx] = true;
-        }
-
-        isVisited[pos.y][pos.x] = true;
-    }
-
-    static boolean isExistZeroTomato() {
-        boolean zeroTomato = false;
-
-        Check:
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 if (box[i][j] == 0) {
-                    zeroTomato = true;
-                    break Check;
+                    count = -1;
+                    break;
                 }
             }
         }
 
-        return zeroTomato;
-    }
-
-    static boolean canGrow(int y, int x) {
-        boolean isPossible = true;
-
-        int direction = 4;
-
-        for (int d = 0; d < 4; d++) {
-            int ny = y + dy[d];
-            int nx = x + dx[d];
-
-            if (ny < 0 || ny >= N || nx < 0 || nx >= M) {
-                direction--;
-                continue;
-            }
-            if (box[ny][nx] == -1) {
-                direction--;
-            }
-        }
-
-        if (direction < 1) {
-            isPossible = false;
-        }
-
-        return isPossible;
+        System.out.print(count);
     }
 }
